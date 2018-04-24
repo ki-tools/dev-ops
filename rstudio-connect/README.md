@@ -63,5 +63,9 @@
       sudo R CMD javareconf
       sudo yum install openssl-devel
       sudo yum install texlive-*
-      sudo yum install git
       ```
+7. Install the [sysreqs](https://github.com/r-hub/sysreqsdb/tree/master/sysreqs) packages:
+   1. Copy [install_sysreqs.R](https://github.com/HBGDki/DevOps/tree/master/rstudio-connect/scripts/install_sysreqs.R) to the local system.
+   2. Give the file execute permissions: `chmod u+rx install_sysreqs.R`
+   3. Run the file: `sudo ./install_sysreqs.R`
+      * Note: View the usage with `./install_sysreqs.R -h` and adjust command line arguments for your system.
