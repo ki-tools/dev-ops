@@ -69,3 +69,8 @@
    2. Give the file execute permissions: `chmod u+rx install_sysreqs.R`
    3. Run the file: `sudo ./install_sysreqs.R`
       * Note: View the usage with `./install_sysreqs.R -h` and adjust command line arguments for your system.
+   4. Manually install and configure the remaining packages:
+      ```bash
+      sudo yum install udunits2 udunits2-devel
+      echo "C_INCLUDE_PATH=\${C_INCLUDE_PATH-'/usr/include/udunits2'}" | sudo tee --append /usr/lib64/R/etc/Renviron
+      ```
