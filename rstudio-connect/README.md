@@ -64,8 +64,18 @@
       sudo yum install openssl-devel
       sudo yum install texlive-*
       ```
+   2. Install GDAL from source:
+      ```bash
+      wget http://download.osgeo.org/gdal/2.2.4/gdal-2.2.4.tar.gz
+      tar zxvf gdal-2.2.4.tar.gz
+      cd gdal-2.2.4
+      ./configure
+      make
+      sudo make install
+      sudo ln -s /usr/local/lib/libgdal.so.20.3.3 /usr/lib64/libgdal.so.20
+      ```
 7. Install the [sysreqs](https://github.com/r-hub/sysreqsdb/tree/master/sysreqs) packages:
-   1. Copy [install_sysreqs.R](https://github.com/HBGDki/DevOps/tree/master/rstudio-connect/scripts/install_sysreqs.R) to the local system.
+   1. Copy [install_sysreqs.R](https://github.com/ki-tools/dev-ops/tree/master/rstudio-connect/scripts/install_sysreqs.R) to the local system.
    2. Give the file execute permissions: `chmod u+rx install_sysreqs.R`
    3. Run the file: `sudo ./install_sysreqs.R`
       * Note: View the usage with `./install_sysreqs.R -h` and adjust command line arguments for your system.
@@ -74,3 +84,9 @@
       sudo yum install udunits2 udunits2-devel
       echo "C_INCLUDE_PATH=\${C_INCLUDE_PATH-'/usr/include/udunits2'}" | sudo tee --append /usr/lib64/R/etc/Renviron
       ```
+8. Install and configure Python:
+   1. Copy [install_pythons.sh](https://github.com/ki-tools/dev-ops/tree/master/rstudio-connect/scripts/install_pythons.sh) to the local system.
+   2. Give the file execute permissions: `chmod u+rx install_pythons.sh`
+   3. Run the script: `./install_pythons.sh`
+   4. The script will print out the RStudio Connect Server configuration that needs to be updated.
+   5. Restart RStudio Connect Server for the configuration changes to take effect.
