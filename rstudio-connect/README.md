@@ -63,6 +63,8 @@
       sudo R CMD javareconf
       sudo yum install openssl-devel
       sudo yum install texlive-*
+      sudo yum install mariadb-devel
+      sudo yum install mariadb
       ```
    2. Install GDAL from source:
       ```bash
