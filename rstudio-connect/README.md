@@ -65,6 +65,7 @@
       sudo yum install texlive-*
       sudo yum install mariadb-devel
       sudo yum install mariadb
+      sudo yum install nlopt nlopt-devel
       ```
    2. Install GDAL from source:
       ```bash
